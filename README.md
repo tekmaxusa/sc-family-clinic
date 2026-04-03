@@ -1,20 +1,23 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# SC Family Clinic
 
-# Run and deploy your AI Studio app
+Plano, Texas family medicine website (React, Vite, TypeScript).
 
-This contains everything you need to run your app locally.
+**Repository:** [github.com/tekmaxusa/sc-family-clinic](https://github.com/tekmaxusa/sc-family-clinic)
 
-View your app in AI Studio: https://ai.studio/apps/9ec4fe74-7bd8-407d-861a-4d51a5071bb6
+## Run locally
 
-## Run Locally
+**Prerequisites:** Node.js
 
-**Prerequisites:**  Node.js
+1. `npm install`
+2. Optional: copy `.env.example` to `.env.local` and set `GEMINI_API_KEY` if using Gemini features.
+3. `npm run dev` — open [http://localhost:3000](http://localhost:3000)
 
+## Docker
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+docker compose up --build -d
+```
+
+App: [http://localhost:3000](http://localhost:3000)
+
+Optional build-time Gemini key: `GEMINI_API_KEY=... docker compose up --build -d`
