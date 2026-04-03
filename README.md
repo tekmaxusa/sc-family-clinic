@@ -21,3 +21,11 @@ docker compose up --build -d
 App: [http://localhost:3000](http://localhost:3000)
 
 Optional build-time Gemini key: `GEMINI_API_KEY=... docker compose up --build -d`
+
+## Deploy (GitHub Pages via Actions)
+
+On push to `main`, [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml) builds the site and deploys to GitHub Pages.
+
+**One-time repo setup:** In GitHub → **Settings** → **Pages** → **Build and deployment** → set **Source** to **GitHub Actions** (not “Deploy from a branch”).
+
+Live site (after the first successful run): `https://tekmaxusa.github.io/sc-family-clinic/`
