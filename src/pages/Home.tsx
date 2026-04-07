@@ -120,7 +120,7 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-blue-100/50 rounded-[2.5rem] blur-2xl -z-10" />
                 <img
-                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800"
+                  src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=900"
                   alt={h.officeAlt}
                   className="w-full h-auto rounded-[2rem] shadow-2xl object-cover aspect-[4/3]"
                   referrerPolicy="no-referrer"
@@ -372,6 +372,8 @@ export default function Home() {
 
       <CTASection
         dark
+        noSectionPadding
+        className="pt-8 md:pt-12 lg:pt-14"
         title={h.ctaFinalTitle}
         subtitle={h.ctaFinalSubtitle}
         footerNote={h.ctaFinalFooter}

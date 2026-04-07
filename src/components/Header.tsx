@@ -59,8 +59,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-20 gap-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 md:py-6">
+        <div className="flex justify-between items-center gap-3 min-h-[3.5rem] md:min-h-16">
           <Link to="/" className="flex flex-col gap-0.5 min-w-0 shrink">
             <span className="text-xl md:text-2xl font-bold text-primary leading-tight truncate">
               {CLINIC_INFO.name}

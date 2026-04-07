@@ -7,6 +7,8 @@ interface CTASectionProps {
   title?: string;
   subtitle?: string;
   className?: string;
+  /** Omit default vertical padding (py-16 / responsive). */
+  noSectionPadding?: boolean;
   dark?: boolean;
   tone?: 'informational' | 'standard';
   footerNote?: string | null;
@@ -16,6 +18,7 @@ export default function CTASection({
   title,
   subtitle,
   className,
+  noSectionPadding = false,
   dark = false,
   tone = 'informational',
   footerNote,
@@ -30,7 +33,7 @@ export default function CTASection({
   return (
     <section
       className={cn(
-        'section-padding',
+        !noSectionPadding && 'section-padding',
         dark ? 'bg-primary text-white' : 'bg-bg-alt text-primary',
         className
       )}
@@ -79,7 +82,7 @@ export default function CTASection({
         {note ? (
           <p
             className={cn(
-              'mt-8 text-sm leading-relaxed max-w-xl mx-auto',
+              'mt-4 text-sm leading-relaxed max-w-xl mx-auto',
               dark ? 'text-slate-400' : 'text-slate-500'
             )}
           >

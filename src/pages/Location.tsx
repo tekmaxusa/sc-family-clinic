@@ -156,7 +156,7 @@ export default function Location() {
           '@context': 'https://schema.org',
           '@type': 'MedicalBusiness',
           name: 'SC Family Clinic',
-          alternateName: '스티븐 최 가족병원',
+          alternateName: '스티븐 채 가족병원',
           description:
             'Family medicine practice in Plano, TX. In-person office visits two days per week; call for schedule. English and Korean.',
           image: 'https://scfamilyclinic.com/logo.png',
