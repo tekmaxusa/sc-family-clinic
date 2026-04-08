@@ -54,20 +54,20 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <Link
                   to="/about"
-                  className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-primary text-white text-base font-bold rounded-2xl hover:bg-slate-800 transition-colors shadow-md"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-primary text-white text-base font-bold rounded-2xl hover:bg-slate-800 transition-colors shadow-md whitespace-nowrap"
                 >
                   {h.ctaAbout}
                 </Link>
                 <Link
                   to="/services"
-                  className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white text-primary border-2 border-slate-200 text-base font-bold rounded-2xl hover:bg-slate-50 transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white text-primary border-2 border-slate-200 text-base font-bold rounded-2xl hover:bg-slate-50 transition-colors whitespace-nowrap"
                 >
                   {h.ctaServices}
                 </Link>
                 <Link
                   to="/korean"
                   lang="ko"
-                  className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-secondary border-2 border-secondary/30 rounded-2xl hover:bg-secondary/5 transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-secondary border-2 border-secondary/30 rounded-2xl hover:bg-secondary/5 transition-colors whitespace-nowrap"
                 >
                   {h.ctaKoreanHub}
                 </Link>
@@ -227,14 +227,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-bold text-black text-lg mb-1">{h.addressLabel}</p>
-                    <a
-                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CLINIC_INFO.address)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-black leading-relaxed hover:underline underline-offset-2"
-                    >
-                      {CLINIC_INFO.address}
-                    </a>
+                    <p className="text-black leading-relaxed">{CLINIC_INFO.address}</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -242,13 +235,8 @@ export default function Home() {
                     <Phone className="w-6 h-6 text-cta" />
                   </div>
                   <div>
-                    <p className="font-bold text-primary text-lg mb-1">{h.phoneLabel}</p>
-                    <a
-                      href={`tel:${CLINIC_INFO.phone}`}
-                      className="text-cta font-bold text-lg hover:underline"
-                    >
-                      {CLINIC_INFO.phoneDisplay}
-                    </a>
+                    <p className="font-bold text-black text-lg mb-1">{h.phoneLabel}</p>
+                    <p className="text-black leading-relaxed">{CLINIC_INFO.phoneDisplay}</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -256,13 +244,8 @@ export default function Home() {
                     <Mail className="w-6 h-6 text-cta" />
                   </div>
                   <div>
-                    <p className="font-bold text-primary text-lg mb-1">{h.emailLabel}</p>
-                    <a
-                      href={`mailto:${CLINIC_INFO.email}`}
-                      className="text-cta font-bold text-lg hover:underline break-all"
-                    >
-                      {CLINIC_INFO.email}
-                    </a>
+                    <p className="font-bold text-black text-lg mb-1">{h.emailLabel}</p>
+                    <p className="text-black leading-relaxed break-all">{CLINIC_INFO.email}</p>
                   </div>
                 </div>
               </div>

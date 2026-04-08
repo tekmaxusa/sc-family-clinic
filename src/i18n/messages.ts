@@ -27,7 +27,7 @@ const en = {
     heroHeadline: 'Comprehensive Family Care You Can Trust',
     heroIntro:
       'Personalized, patient-centered care for individuals and families in Plano, Texas.',
-    ctaAbout: 'About our practice',
+    ctaAbout: 'About us',
     ctaServices: 'Our services',
     ctaKoreanHub: '한국어 진료안내',
     servicesTitle: 'Our services',
