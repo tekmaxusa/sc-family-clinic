@@ -1,6 +1,5 @@
 import { Award, CheckCircle2, Languages, GraduationCap } from 'lucide-react';
 import { CLINIC_INFO, DR_CHAE_PHOTO_URL } from '../constants';
-import CTASection from '../components/CTASection';
 import { useI18n } from '../context/LanguageContext';
 
 export default function Doctor() {
@@ -89,8 +88,6 @@ export default function Doctor() {
           </div>
         </div>
       </section>
-
-      <CTASection />
     </div>
   );
 }

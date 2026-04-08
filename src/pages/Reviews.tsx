@@ -1,5 +1,4 @@
 import { Star, Quote } from 'lucide-react';
-import CTASection from '../components/CTASection';
 import { motion } from 'motion/react';
 import { useI18n } from '../context/LanguageContext';
 
@@ -67,8 +66,6 @@ export default function Reviews() {
           </motion.div>
         </div>
       </section>
-
-      <CTASection />
     </div>
   );
 }

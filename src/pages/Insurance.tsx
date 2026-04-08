@@ -1,6 +1,5 @@
 import { Phone, CheckCircle2, ShieldCheck, AlertCircle } from 'lucide-react';
 import { CLINIC_INFO } from '../constants';
-import CTASection from '../components/CTASection';
 import { motion } from 'motion/react';
 import { useI18n } from '../context/LanguageContext';
 
@@ -96,8 +95,6 @@ export default function Insurance() {
           </div>
         </div>
       </section>
-
-      <CTASection dark />
     </div>
   );
 }

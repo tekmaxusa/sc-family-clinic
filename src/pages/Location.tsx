@@ -1,6 +1,5 @@
 import { MapPin, Phone, Mail, Clock, Navigation } from 'lucide-react';
 import { CLINIC_INFO } from '../constants';
-import CTASection from '../components/CTASection';
 import { motion } from 'motion/react';
 import { useI18n } from '../context/LanguageContext';
 
@@ -10,8 +9,6 @@ export default function Location() {
   const intro = l.introLine
     .replace('{name}', CLINIC_INFO.name)
     .replace('{nameKo}', CLINIC_INFO.nameKo);
-  const scheduleLine =
-    locale === 'ko' ? CLINIC_INFO.inPersonScheduleKo : CLINIC_INFO.inPersonScheduleEn;
 
   return (
     <div className="flex flex-col w-full">
@@ -32,13 +29,7 @@ export default function Location() {
             >
               {l.subtitleKoLabel}
             </p>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed mb-2">{intro}</p>
-            <p
-              className="text-base text-slate-500 max-w-2xl mx-auto"
-              lang={locale === 'ko' ? 'ko' : undefined}
-            >
-              {scheduleLine}
-            </p>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">{intro}</p>
           </motion.div>
 
           <div className="flex flex-col lg:flex-row gap-12 mb-16">
@@ -76,13 +67,19 @@ export default function Location() {
               className="lg:w-2/5 space-y-8"
             >
               <div className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-100 card-shadow">
-                <h2 className="text-2xl font-bold text-primary mb-2 flex items-center">
+                <h2
+                  className={`text-2xl font-bold text-primary flex items-center ${
+                    l.hoursKoLabel !== l.hoursTitle ? 'mb-2' : 'mb-6'
+                  }`}
+                >
                   <Clock className="w-7 h-7 text-cta mr-3" />
                   {l.hoursTitle}
                 </h2>
-                <p lang="ko" className="text-sm text-slate-500 mb-6">
-                  {l.hoursKoLabel}
-                </p>
+                {l.hoursKoLabel !== l.hoursTitle ? (
+                  <p lang="ko" className="text-sm font-medium text-primary mb-6">
+                    {l.hoursKoLabel}
+                  </p>
+                ) : null}
                 <ul className="space-y-5">
                   {CLINIC_INFO.hours.map((h, i) => {
                     const ko = CLINIC_INFO.hoursKo[i];
@@ -93,8 +90,9 @@ export default function Location() {
                           <span className="font-bold text-primary text-right">{h.time}</span>
                         </div>
                         {ko ? (
-                          <p lang="ko" className="text-sm text-slate-500 mt-2">
-                            {ko.day} · {ko.time}
+                          <p lang="ko" className="text-base mt-2 flex justify-between items-start gap-4">
+                            <span className="text-slate-500 font-medium">{ko.day}</span>
+                            <span className="font-bold text-primary text-right">{ko.time}</span>
                           </p>
                         ) : null}
                       </li>
@@ -149,16 +147,14 @@ export default function Location() {
         </div>
       </section>
 
-      <CTASection subtitle={l.ctaDisclaimer} />
-
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'MedicalBusiness',
           name: 'SC Family Clinic',
-          alternateName: '스티븐 채 가족병원',
+          alternateName: '스티븐 최 가족병원',
           description:
-            'Family medicine practice in Plano, TX. In-person office visits two days per week; call for schedule. English and Korean.',
+            'Family medicine practice in Plano, TX. English and Korean. Call for appointments and hours.',
           image: 'https://scfamilyclinic.com/logo.png',
           '@id': 'https://scfamilyclinic.com',
           url: 'https://scfamilyclinic.com',

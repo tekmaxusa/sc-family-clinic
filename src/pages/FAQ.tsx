@@ -1,6 +1,5 @@
 import { Plus, Minus } from 'lucide-react';
 import React, { useMemo } from 'react';
-import CTASection from '../components/CTASection';
 import { CLINIC_INFO } from '../constants';
 import { useI18n } from '../context/LanguageContext';
 
@@ -37,8 +36,6 @@ export default function FAQ() {
           </div>
         </div>
       </section>
-
-      <CTASection dark />
 
       <script type="application/ld+json">
         {JSON.stringify({

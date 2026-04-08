@@ -1,7 +1,5 @@
-import { Phone, CheckCircle2, ArrowLeft } from 'lucide-react';
+import { CheckCircle2, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { CLINIC_INFO } from '../constants';
-import CTASection from '../components/CTASection';
 import { useI18n } from '../context/LanguageContext';
 
 interface ServiceSubpageProps {
@@ -45,23 +43,9 @@ export default function ServiceSubpage({ type }: ServiceSubpageProps) {
                 </li>
               ))}
             </ul>
-
-            <div className="bg-slate-100 border border-slate-200 text-primary p-10 md:p-12 rounded-[3rem] text-center">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">{sub.ctaTitle}</h3>
-              <p className="text-lg text-slate-600 mb-8 max-w-xl mx-auto">{sub.ctaBody}</p>
-              <a
-                href={`tel:${CLINIC_INFO.phone}`}
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary text-primary font-bold rounded-2xl hover:bg-white transition-colors"
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                {CLINIC_INFO.phoneDisplay}
-              </a>
-            </div>
           </div>
         </div>
       </section>
-
-      <CTASection />
     </div>
   );
 }

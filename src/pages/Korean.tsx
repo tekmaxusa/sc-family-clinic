@@ -1,14 +1,12 @@
 import { Phone, CheckCircle2, Languages } from 'lucide-react';
 import { CLINIC_INFO } from '../constants';
-import CTASection from '../components/CTASection';
-import { useI18n } from '../context/LanguageContext';
+import { getMessages } from '../i18n/messages';
 
 export default function Korean() {
-  const { messages } = useI18n();
-  const k = messages.koreanPage;
+  const k = getMessages('ko').koreanPage;
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full" lang="ko">
       <section className="bg-white pt-20 pb-12 md:pt-32 md:pb-20">
         <div className="max-content">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-20">
@@ -19,22 +17,22 @@ export default function Korean() {
                 </div>
                 <span className="text-lg font-bold text-secondary">{k.hubLabel}</span>
               </div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-3">
-                {k.officialLabel}
-              </p>
-              <h1 className="text-3xl md:text-5xl font-extrabold text-primary mb-3 leading-tight tracking-tight">
-                {CLINIC_INFO.name}
-              </h1>
-              <p className="text-3xl md:text-4xl font-bold text-slate-800 mb-8 leading-snug" lang="ko">
+              <h1 className="text-3xl md:text-5xl font-extrabold text-primary mb-8 leading-tight tracking-tight">
                 {CLINIC_INFO.nameKo}
-              </p>
-              <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium">{k.intro}</p>
+              </h1>
+              <div className="space-y-4 text-xl md:text-2xl text-slate-600 leading-relaxed font-medium">
+                <p>{k.intro}</p>
+                <p>{k.intro2}</p>
+              </div>
             </div>
             <div className="w-full lg:w-1/2">
               <div className="bg-bg-alt p-10 rounded-[3rem] border border-slate-100 shadow-xl">
                 <h2 className="text-2xl font-bold text-primary mb-2">{k.drTitle}</h2>
                 <p className="text-sm text-slate-500 mb-6">{k.drSubtitle}</p>
-                <p className="text-lg text-slate-700 leading-relaxed mb-8">{k.drBio}</p>
+                <div className="text-lg text-slate-700 leading-relaxed mb-8 space-y-4">
+                  <p>{k.drBio}</p>
+                  <p>{k.drBio2}</p>
+                </div>
                 <div className="space-y-5">
                   {k.bullets.map((item, i) => (
                     <div
@@ -86,8 +84,6 @@ export default function Korean() {
           </div>
         </div>
       </section>
-
-      <CTASection title={k.ctaEndTitle} subtitle={k.ctaEndBody} footerNote={null} />
     </div>
   );
 }

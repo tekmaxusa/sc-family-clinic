@@ -1,4 +1,3 @@
-import CTASection from '../components/CTASection';
 import { CheckCircle2 } from 'lucide-react';
 import { useI18n } from '../context/LanguageContext';
 
@@ -46,8 +45,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      <CTASection />
     </div>
   );
 }

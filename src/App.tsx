@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import MobileBottomBar from './components/MobileBottomBar';
+import BackToTop from './components/BackToTop';
 
 // Pages
 import Home from './pages/Home';
@@ -53,7 +53,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
-        <MobileBottomBar />
+        <BackToTop />
       </div>
     </Router>
   );

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import CTASection from '../components/CTASection';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { useI18n } from '../context/LanguageContext';
 
@@ -46,8 +45,6 @@ export default function Services() {
           </div>
         </div>
       </section>
-
-      <CTASection dark />
     </div>
   );
 }

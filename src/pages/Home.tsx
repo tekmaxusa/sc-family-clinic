@@ -3,33 +3,19 @@ import {
   Phone,
   CheckCircle2,
   ShieldCheck,
-  Languages,
   MapPin,
   Award,
   ArrowRight,
   Mail,
-  Globe,
   Heart,
   Sparkles,
-  Calendar,
 } from 'lucide-react';
-import { CLINIC_INFO, DR_CHAE_PHOTO_URL } from '../constants';
+import { CLINIC_INFO, DR_CHAE_PHOTO_URL, HOME_HERO_IMAGE_URL, clinicGoogleMapsEmbedSrc } from '../constants';
 import { useI18n } from '../context/LanguageContext';
-import CTASection from '../components/CTASection';
 
 export default function Home() {
-  const { locale, messages } = useI18n();
+  const { messages, locale } = useI18n();
   const h = messages.home;
-  const scheduleText =
-    locale === 'ko' ? CLINIC_INFO.inPersonScheduleKo : CLINIC_INFO.inPersonScheduleEn;
-
-  const trustItems = [
-    { icon: Award, text: h.trustBoard },
-    { icon: Calendar, text: h.trustInPerson },
-    { icon: Languages, text: h.trustBilingual },
-    { icon: ShieldCheck, text: h.trustTraining },
-    { icon: MapPin, text: h.trustPlano },
-  ];
 
   return (
     <div className="flex flex-col w-full">
@@ -47,46 +33,23 @@ export default function Home() {
               </h1>
               <p
                 lang="ko"
-                className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 mb-8 leading-snug"
+                className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 mb-6 leading-snug"
               >
                 {CLINIC_INFO.nameKo}
               </p>
 
-              <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <h2
+                lang={locale === 'ko' ? 'ko' : undefined}
+                className="text-2xl md:text-3xl font-bold text-primary mb-4 leading-snug max-w-2xl mx-auto lg:mx-0"
+              >
+                {h.heroHeadline}
+              </h2>
+              <p
+                lang={locale === 'ko' ? 'ko' : undefined}
+                className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+              >
                 {h.heroIntro}
               </p>
-
-              <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 md:p-6 mb-8 max-w-2xl mx-auto lg:mx-0 text-left">
-                <div className="flex gap-4">
-                  <div className="shrink-0 w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center">
-                    <Calendar className="w-5 h-5 text-cta" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-primary mb-1">{h.inPersonLabel}</p>
-                    <p
-                      className="text-sm text-slate-600 leading-relaxed"
-                      lang={locale === 'ko' ? 'ko' : undefined}
-                    >
-                      {scheduleText}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-10">
-                <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-white text-slate-700 border border-slate-200">
-                  <Languages className="w-3.5 h-3.5 mr-1.5 text-secondary" />
-                  {h.badgeBilingual}
-                </span>
-                <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-white text-slate-700 border border-slate-200">
-                  <CheckCircle2 className="w-3.5 h-3.5 mr-1.5 text-accent-green" />
-                  {h.badgeNewPatients}
-                </span>
-                <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-white text-slate-700 border border-slate-200">
-                  <ShieldCheck className="w-3.5 h-3.5 mr-1.5 text-medicare-green" />
-                  {h.badgeInsurance}
-                </span>
-              </div>
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <Link
@@ -103,64 +66,37 @@ export default function Home() {
                 </Link>
                 <Link
                   to="/korean"
+                  lang="ko"
                   className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-secondary border-2 border-secondary/30 rounded-2xl hover:bg-secondary/5 transition-colors"
                 >
                   {h.ctaKoreanHub}
                 </Link>
               </div>
-              <p className="mt-6 text-sm text-slate-500">
-                {h.officePhone}{' '}
-                <a href={`tel:${CLINIC_INFO.phone}`} className="font-semibold text-cta hover:underline">
-                  {CLINIC_INFO.phoneDisplay}
-                </a>
-              </p>
             </div>
 
             <div className="flex-1 w-full max-w-xl lg:max-w-none">
               <div className="relative">
                 <div className="absolute -inset-4 bg-blue-100/50 rounded-[2.5rem] blur-2xl -z-10" />
                 <img
-                  src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=900"
-                  alt={h.officeAlt}
-                  className="w-full h-auto rounded-[2rem] shadow-2xl object-cover aspect-[4/3]"
-                  referrerPolicy="no-referrer"
+                  src={HOME_HERO_IMAGE_URL}
+                  alt={h.heroAlt}
+                  className="w-full h-auto rounded-[2rem] shadow-2xl object-cover object-center aspect-[4/3]"
                 />
-                <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 hidden md:block max-w-[220px]">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-accent-green/10 rounded-full flex items-center justify-center">
-                      <Award className="w-6 h-6 text-accent-green" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-primary">{h.floatingBoard}</p>
-                      <p className="text-xs text-slate-500">{h.floatingFamily}</p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-bg-alt py-8 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 overflow-x-auto">
-          <div className="flex items-center justify-between min-w-[800px] md:min-w-0 gap-8">
-            {trustItems.map((item, i) => (
-              <div key={i} className="flex items-center space-x-2 whitespace-nowrap">
-                <item.icon className="w-5 h-5 text-secondary" />
-                <span className="text-sm font-bold text-slate-700">{item.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white">
+      <section className="pt-8 sm:pt-10 md:pt-12 pb-16 md:pb-24 lg:pb-32 bg-white">
         <div className="max-content">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">{h.servicesTitle}</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-2">{h.servicesLead}</p>
-            <p className="text-sm text-slate-500 max-w-2xl mx-auto mt-4">{h.servicesTopics}</p>
+          <div className="text-center mb-12 md:mb-14">
+            <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4 md:mb-5">{h.servicesTitle}</h2>
+            <div className="mx-auto w-full max-w-3xl px-2 text-center md:flex md:justify-center md:overflow-x-auto md:[-webkit-overflow-scrolling:touch]">
+              <p className="text-sm sm:text-[0.9375rem] md:text-base text-slate-600 font-medium leading-snug whitespace-normal md:whitespace-nowrap">
+                {h.servicesTopics}
+              </p>
+            </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {h.serviceCards.map((service, i) => (
@@ -234,16 +170,6 @@ export default function Home() {
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">{h.doctorMeet}</h2>
                 <p className="text-xl text-secondary font-bold mb-6">{h.doctorRole}</p>
                 <p className="text-lg text-slate-600 mb-10 leading-relaxed">{h.doctorBio}</p>
-                <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
-                  {h.doctorTags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-4 py-2 bg-slate-50 rounded-xl text-sm font-bold text-slate-600 border border-slate-100"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
                 <Link
                   to="/dr-steven-chae-plano"
                   className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary text-primary font-bold rounded-2xl hover:bg-slate-50 transition-all"
@@ -258,13 +184,15 @@ export default function Home() {
 
       <section className="py-12 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">{h.insuranceLabel}</p>
-          <p className="text-base text-slate-600 mb-8 max-w-2xl mx-auto">{h.insuranceBody}</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all">
-            <span className="text-xl font-black text-slate-700">UnitedHealthcare</span>
-            <span className="text-xl font-black text-slate-700">Medicare</span>
-            <span className="text-xl font-black text-slate-700">Molina</span>
-            <span className="text-xl font-black text-slate-700">UHC Advantage</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4 md:mb-5">{h.insuranceLabel}</h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed">
+            {h.insuranceBody}
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            <span className="text-xl font-black text-slate-400">UnitedHealthcare</span>
+            <span className="text-xl font-black text-slate-400">Medicare</span>
+            <span className="text-xl font-black text-slate-400">Molina</span>
+            <span className="text-xl font-black text-slate-400">UHC Advantage</span>
           </div>
           <p className="mt-8 text-sm text-slate-500">
             {h.insuranceViewList}{' '}
@@ -282,16 +210,14 @@ export default function Home() {
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">{h.contactLead}</p>
           </div>
           <div className="bg-bg-alt rounded-[3rem] overflow-hidden border border-slate-200 flex flex-col lg:flex-row">
-            <div className="w-full lg:w-1/2 h-80 lg:h-auto bg-slate-300 relative">
-              <div className="absolute inset-0 flex items-center justify-center text-slate-500 font-medium bg-slate-100">
-                <div className="text-center p-8">
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg mx-auto mb-6">
-                    <MapPin className="w-8 h-8 text-cta" />
-                  </div>
-                  <p className="text-lg font-bold text-primary mb-2">5168 Village Creek Dr, Suite 300</p>
-                  <p className="text-slate-600">Plano, TX 75093</p>
-                </div>
-              </div>
+            <div className="w-full lg:w-1/2 h-80 lg:min-h-[28rem] lg:h-auto relative bg-slate-200">
+              <iframe
+                title={`${CLINIC_INFO.name} — ${CLINIC_INFO.address}`}
+                src={clinicGoogleMapsEmbedSrc()}
+                className="absolute inset-0 h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
             <div className="w-full lg:w-1/2 p-10 md:p-16 flex flex-col justify-center">
               <div className="space-y-10">
@@ -300,8 +226,15 @@ export default function Home() {
                     <MapPin className="w-6 h-6 text-cta" />
                   </div>
                   <div>
-                    <p className="font-bold text-primary text-lg mb-1">{h.addressLabel}</p>
-                    <p className="text-slate-600 leading-relaxed">{CLINIC_INFO.address}</p>
+                    <p className="font-bold text-black text-lg mb-1">{h.addressLabel}</p>
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CLINIC_INFO.address)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-black leading-relaxed hover:underline underline-offset-2"
+                    >
+                      {CLINIC_INFO.address}
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -312,7 +245,7 @@ export default function Home() {
                     <p className="font-bold text-primary text-lg mb-1">{h.phoneLabel}</p>
                     <a
                       href={`tel:${CLINIC_INFO.phone}`}
-                      className="text-cta font-bold text-2xl hover:underline"
+                      className="text-cta font-bold text-lg hover:underline"
                     >
                       {CLINIC_INFO.phoneDisplay}
                     </a>
@@ -329,22 +262,6 @@ export default function Home() {
                       className="text-cta font-bold text-lg hover:underline break-all"
                     >
                       {CLINIC_INFO.email}
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm mr-5 shrink-0">
-                    <Globe className="w-6 h-6 text-cta" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-primary text-lg mb-1">{h.websiteLabel}</p>
-                    <a
-                      href={CLINIC_INFO.websiteUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-cta font-bold text-lg hover:underline"
-                    >
-                      {CLINIC_INFO.websiteDisplay}
                     </a>
                   </div>
                 </div>
@@ -369,15 +286,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <CTASection
-        dark
-        noSectionPadding
-        className="pt-8 md:pt-12 lg:pt-14"
-        title={h.ctaFinalTitle}
-        subtitle={h.ctaFinalSubtitle}
-        footerNote={h.ctaFinalFooter}
-      />
     </div>
   );
 }

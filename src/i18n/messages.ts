@@ -12,9 +12,6 @@ const en = {
   footer: {
     quickLinks: 'Quick Links',
     hoursTitle: 'Hours & visits',
-    insuranceNote:
-      'New patients welcome. Insurance plans vary—call to confirm. UHC Advantage, Medicare, Molina, and others may be accepted.',
-    insuranceNoteKo: '신규 환자 환영. 보험은 개별 확인 부탁드립니다.',
     copyright: 'All rights reserved.',
     reviews: 'Patient Reviews',
     faq: 'Frequently Asked Questions',
@@ -23,27 +20,17 @@ const en = {
     ourServices: 'Our Services',
     insurancePayments: 'Insurance & Payments',
     locationHours: 'Location & Hours',
+    backToTop: 'Back to top',
   },
   home: {
     heroKicker: 'Family medicine · Plano, Texas',
+    heroHeadline: 'Comprehensive Family Care You Can Trust',
     heroIntro:
-      'A calm, reliable hub for family-oriented primary care—clear information about our practice, services, and how we support your health over time.',
-    inPersonLabel: 'In-person availability',
-    badgeBilingual: 'English & Korean',
-    badgeNewPatients: 'New patients welcome',
-    badgeInsurance: 'Medicare & major plans — verify by phone',
+      'Personalized, patient-centered care for individuals and families in Plano, Texas.',
     ctaAbout: 'About our practice',
-    ctaServices: 'Services & education',
-    ctaKoreanHub: 'Korean information hub',
-    officePhone: 'Office telephone:',
-    trustBoard: 'Board-certified family MD',
-    trustInPerson: 'In-person 2 days / week',
-    trustBilingual: 'English & Korean',
-    trustTraining: 'UTSW & Yale-trained',
-    trustPlano: 'Plano 75093',
+    ctaServices: 'Our services',
+    ctaKoreanHub: '한국어 진료안내',
     servicesTitle: 'Our services',
-    servicesLead:
-      'Educational overview of what family medicine can offer—primary care, prevention, chronic conditions, and exams.',
     servicesTopics: 'Primary care · Preventive care · Chronic disease management · Physical exams',
     viewAllServices: 'View All Services',
     whyTitle: 'Why patients choose us',
@@ -58,12 +45,11 @@ const en = {
     doctorMeet: 'Meet Steven Chae, MD',
     doctorRole: 'Board-Certified Family Physician',
     doctorBio:
-      'Dr. Steven Chae is a Family Medicine physician trained at UT Southwestern and Yale-affiliated programs.',
+      'Dr. Steven Chae is a Family Medicine physician trained at UT Southwestern.',
     doctorCta: 'Physician profile & background',
-    doctorTags: ['UT Southwestern', 'Yale-affiliated training'],
     insuranceLabel: 'Insurance',
     insuranceBody:
-      'For reference: we work with United Healthcare Advantage, Traditional Medicare, Molina, and other plans. Coverage varies—please call to confirm your benefits.',
+      'We work with United Healthcare Advantage, Traditional Medicare, Molina, and other plans. Coverage varies—please call to confirm your benefits.',
     insuranceViewList: "Don't see your plan?",
     insuranceViewListLink: 'View full list',
     contactTitle: 'Contact & Location',
@@ -72,17 +58,9 @@ const en = {
     addressLabel: 'Address',
     phoneLabel: 'Phone',
     emailLabel: 'Email',
-    websiteLabel: 'Website',
     getDirections: 'Get Directions',
     officeHoursBtn: 'Office Hours',
-    floatingBoard: 'Board-certified',
-    floatingFamily: 'Family physician',
-    officeAlt: 'Bright modern clinic interior',
-    ctaFinalTitle: 'Contact & scheduling',
-    ctaFinalSubtitle:
-      'If you would like to schedule or have questions about visits, insurance, or languages spoken, our staff can guide you during office hours.',
-    ctaFinalFooter:
-      'New patients are welcome. Medicare and many commercial plans; please verify coverage by phone.',
+    heroAlt: 'Physician and patient talking at a consultation — personalized family care',
     serviceCards: [
       {
         title: 'Primary Care',
@@ -171,8 +149,6 @@ const en = {
   serviceSub: {
     back: 'Back to Services',
     keyBenefits: 'Key benefits & services',
-    ctaTitle: 'Questions about this service?',
-    ctaBody: 'Call our Plano office for scheduling and general information.',
     primary: {
       h1: 'Primary Care & Family Medicine in Plano, TX 75093',
       title: 'Primary Care',
@@ -376,21 +352,20 @@ const en = {
     areasBody:
       'We serve patients from communities across North Texas, including:',
     cities: ['Plano', 'Frisco', 'Allen', 'McKinney', 'Richardson', 'The Colony', 'Dallas', 'Carrollton', 'Murphy'],
-    ctaDisclaimer:
-      'Details here are for general information and may change—please confirm by phone.',
   },
   koreanPage: {
     hubLabel: 'Korean language support',
     officialLabel: 'Official names',
     intro:
-      'Our Plano practice welcomes Korean-speaking patients. We share clear information about family medicine, prevention, chronic conditions, and exams—with fluent Korean communication when you visit or call.',
-    drTitle: 'Dr. Steven Chae (채승기), MD',
+      'Our Plano practice welcomes Korean-speaking patients. We share clear information about family medicine, prevention, chronic conditions, and exams.',
+    intro2: 'When you visit or call, our team can help in fluent Korean.',
+    drTitle: 'Dr. Steven Chae (최승기), MD',
     drSubtitle: 'Board-certified family physician',
-    drBio:
-      'Dr. Chae trained at UT Southwestern and Yale-affiliated programs. He emphasizes clear explanations and prevention.',
+    drBio: 'Dr. Chae has been a board-certified family medicine physician for over 25 years.',
+    drBio2:
+      'Fluent in English and Korean, he strives to offer a comfortable setting for Korean-speaking patients to discuss their health.',
     bullets: [
       'Fluent in English and Korean',
-      'In-person visits two days per week (call for schedule)',
       'Medicare and many plans—verify by phone',
       'Immunizations, checkups, chronic disease support',
     ],
@@ -408,19 +383,6 @@ const en = {
       'Call during office hours for appointments, insurance, or scheduling. Our team can help in Korean.',
     office: 'Office:',
     callBtn: 'Call office',
-    ctaEndTitle: 'Browse in English',
-    ctaEndBody: 'Use the EN toggle or other menu pages for full English detail on services, insurance, and hours.',
-  },
-  ctaDefaults: {
-    title: 'Questions or scheduling',
-    subtitle:
-      'Our team can help with scheduling, insurance verification, and general questions during posted office hours.',
-    footer:
-      'We accept United Healthcare Advantage and Traditional (Molina), among other plans. Uninsured patients are welcome to call for details.',
-    phoneLabel: 'Office telephone:',
-  },
-  mobile: {
-    officeLine: 'Office line',
   },
 } as const;
 
@@ -438,9 +400,6 @@ const ko = {
   footer: {
     quickLinks: '바로가기',
     hoursTitle: '진료 시간·방문 안내',
-    insuranceNote:
-      '신규 환자를 환영합니다. 보험 적용 여부는 가입 플랜마다 다를 수 있으니 반드시 전화로 확인해 주세요. UHC 어드밴티지, 메디케어, 몰리나 등 여러 보험과 함께하고 있습니다.',
-    insuranceNoteKo: '보험·수납 관련 문의는 사무실로 연락 주세요.',
     copyright: '모든 권리 보유.',
     reviews: '환자 후기',
     faq: '자주 묻는 질문',
@@ -449,27 +408,17 @@ const ko = {
     ourServices: '진료 과목',
     insurancePayments: '보험 및 결제',
     locationHours: '위치 및 진료 시간',
+    backToTop: '맨 위로',
   },
   home: {
     heroKicker: '가정의학 · 텍사스 플레이노',
+    heroHeadline: '믿고 맡기실 수 있는 포괄적 가족 진료',
     heroIntro:
-      '온 가족의 일차 진료를 책임지는 병원입니다. 어떤 진료를 하는지, 건강을 어떻게 지키는지 차분하고 알기 쉽게 안내해 드립니다.',
-    inPersonLabel: '대면 진료',
-    badgeBilingual: '영어·한국어 진료',
-    badgeNewPatients: '신규 환자 환영',
-    badgeInsurance: '메디케어·주요 보험 (적용 여부는 전화 확인)',
+      '텍사스 플레이노에서 개인과 가족을 위한 맞춤형·환자 중심 진료를 제공합니다.',
     ctaAbout: '병원 소개',
     ctaServices: '진료 안내',
-    ctaKoreanHub: '한국어 안내 모아보기',
-    officePhone: '사무실 전화:',
-    trustBoard: '가정의학과 전문의',
-    trustInPerson: '주 2회 대면 진료',
-    trustBilingual: '영어·한국어',
-    trustTraining: 'UTSW·예일 연계 수련',
-    trustPlano: '플레이노 75093',
+    ctaKoreanHub: '한국어 진료안내',
     servicesTitle: '진료 안내',
-    servicesLead:
-      '가정의학에서 다루는 진료를 한눈에 보실 수 있습니다. 일차 진료, 예방, 만성 질환 관리, 신체 검진까지 안내합니다.',
     servicesTopics: '일차 진료 · 예방 · 만성 질환 · 신체 검진',
     viewAllServices: '진료 과목 전체 보기',
     whyTitle: '환자분들이 찾아주시는 이유',
@@ -481,15 +430,14 @@ const ko = {
       { title: '예방 중심', desc: '검진과 생활 습관까지 함께 챙겨 건강을 지키도록 돕습니다.' },
       { title: '편안한 분위기', desc: '전문적이면서도 부담 없이 내원하실 수 있는 공간을 지향합니다.' },
     ],
-    doctorMeet: '스티븐 채 원장님을 소개합니다',
+    doctorMeet: '스티븐 최 원장님을 소개합니다',
     doctorRole: '가정의학과 전문의 (미국 전문의 자격)',
     doctorBio:
-      '텍사스 UT 사우스웨스턴과 예일 대학 연계 프로그램에서 수련한 가정의학과 전문의입니다.',
+      '텍사스 UT 사우스웨스턴에서 수련한 가정의학과 전문의입니다.',
     doctorCta: '원장님 약력·학력 보기',
-    doctorTags: ['UT Southwestern', '예일 연계 레지던시'],
     insuranceLabel: '보험',
     insuranceBody:
-      '유나이티드헬스케어 어드밴티지, 기본 메디케어, 몰리나 등 여러 보험과 함께하고 있습니다. 본인 플랜 적용 여부는 사무실로 확인해 주세요.',
+      '유나이티드헬스케어 어드밴티지, 기본 메디케어, 몰리나 등 여러 보험과 함께하고 있습니다. 적용 여부는 플랜마다 다를 수 있으니 혜택 확인은 전화로 부탁드립니다.',
     insuranceViewList: '제 보험이 목록에 없나요?',
     insuranceViewListLink: '수납 가능 보험 전체 보기',
     contactTitle: '오시는 길·연락처',
@@ -498,17 +446,9 @@ const ko = {
     addressLabel: '주소',
     phoneLabel: '전화',
     emailLabel: '이메일',
-    websiteLabel: '웹사이트',
     getDirections: '지도에서 보기',
     officeHoursBtn: '진료 시간 보기',
-    floatingBoard: '전문의 자격',
-    floatingFamily: '가정의학과',
-    officeAlt: '밝고 깨끗한 클리닉 내부',
-    ctaFinalTitle: '예약·문의',
-    ctaFinalSubtitle:
-      '방문 예약, 보험 안내, 진료 시 사용 가능한 언어 등은 업무 시간에 전화 주시면 친절히 안내해 드립니다.',
-    ctaFinalFooter:
-      '신규 환자를 환영합니다. 메디케어와 여러 상용 보험을 이용하실 수 있으며, 적용 여부는 전화로 확인해 주세요.',
+    heroAlt: '진료 상담 중인 의사와 환자 — 맞춤형 가족 진료',
     serviceCards: [
       {
         title: '일차 진료',
@@ -533,7 +473,7 @@ const ko = {
     ],
   },
   about: {
-    title: '스티븐 채 가족병원 소개',
+    title: '스티븐 최 가족병원 소개',
     intro:
       '플레이노에서 환자를 가장 먼저 생각하는 일차 진료를 제공합니다. 신뢰할 수 있는 정보와 따뜻한 진료로 오랫동안 함께하고 싶은 병원이 되고자 합니다.',
     missionTitle: '미션',
@@ -541,7 +481,7 @@ const ko = {
       '플레이노와 인근 지역의 개인·가족에게 질 높은 진료를 제공하고, 예방과 만성 질환 관리로 일상 속 건강을 지키도록 돕습니다.',
     visionTitle: '원장님의 비전',
     visionBody:
-      '스티븐 채 원장님은 환자분을 가족처럼 대하는 진료를 위해 스티븐 채 가족병원을 열었습니다. 영어와 한국어에 모두 능통해 북텍사스 한인 분들께도 부담 없이 설명드릴 수 있습니다. 견고한 의학적 훈련과 따뜻한 태도를 함께 추구합니다.',
+      '스티븐 최 원장님은 환자분을 가족처럼 대하는 진료를 위해 스티븐 최 가족병원을 열었습니다. 영어와 한국어에 모두 능통해 북텍사스 한인 분들께도 부담 없이 설명드릴 수 있습니다. 견고한 의학적 훈련과 따뜻한 태도를 함께 추구합니다.',
     valuesTitle: '우리가 지키는 가치',
     values: [
       {
@@ -597,8 +537,6 @@ const ko = {
   serviceSub: {
     back: '진료 과목 목록으로',
     keyBenefits: '주요 진료 내용',
-    ctaTitle: '이 진료에 대해 더 궁금하신가요?',
-    ctaBody: '예약과 일반 문의는 플레이노 사무실로 전화해 주세요.',
     primary: {
       h1: '플레이노 TX 75093 일차 진료·가정의학',
       title: '일차 진료',
@@ -657,7 +595,7 @@ const ko = {
     role: '가정의학과 전문의 (미국 전문의 자격)',
     bioTitle: '약력',
     bio1:
-      '스티븐 채 원장님은 플레이노에서 근거 중심의 꼼꼼한 진료를 제공하는 가정의학과 전문의입니다.',
+      '스티븐 최 원장님은 플레이노에서 근거 중심의 꼼꼼한 진료를 제공하는 가정의학과 전문의입니다.',
     bio2:
       '텍사스대 오스틴 캠퍼스 학사, 달라스 UT 사우스웨스턴 의대 졸업 후 예일 연계 및 루이빌 대학교 레지던시·연수 과정을 마쳤습니다.',
     bio3:
@@ -719,7 +657,7 @@ const ko = {
       },
       {
         q: '원장님께서 한국어로 진료 설명도 해 주시나요?',
-        a: '네. 스티븐 채 원장님은 영어와 한국어 모두 능통하십니다.',
+        a: '네. 스티븐 최 원장님은 영어와 한국어 모두 능통하십니다.',
       },
       {
         q: '어떤 보험을 받나요?',
@@ -737,7 +675,7 @@ const ko = {
   },
   reviews: {
     title: '환자 후기',
-    intro: '스티븐 채 가족병원을 방문하신 분들의 이야기입니다.',
+    intro: '스티븐 최 가족병원을 방문하신 분들의 이야기입니다.',
     googleCta: 'Google에서 더 보기 →',
     items: en.reviews.items,
   },
@@ -745,7 +683,7 @@ const ko = {
     title: '개인정보 처리방침',
     updated: '최종 수정: 2026년 4월',
     lead:
-      '스티븐 채 가족병원은 방문자의 개인정보를 소중히 다룹니다. 이 웹사이트에서의 정보 처리 방식을 안내합니다.',
+      '스티븐 최 가족병원은 방문자의 개인정보를 소중히 다룹니다. 이 웹사이트에서의 정보 처리 방식을 안내합니다.',
     s1h: '1. 이 사이트에서 PHI 수집 없음',
     s1b:
       '이 사이트는 병원 안내용입니다. 여기서는 보호 건강 정보(PHI)를 직접 받지 않으며, 보안을 위해 이 도메인에서는 온라인 예약이나 환자 포털을 두지 않았습니다.',
@@ -774,20 +712,21 @@ const ko = {
     areasTitle: '진료 지역',
     areasBody: '북텍사스 여러 지역 환자를 돕고 있습니다:',
     cities: en.location.cities,
-    ctaDisclaimer: '위 내용은 참고용이며 변경될 수 있으니, 방문 전 전화로 확인해 주세요.',
   },
   koreanPage: {
     hubLabel: '한국어 안내',
     officialLabel: '영문·한글 표기',
     intro:
-      '플레이노에서 온 가족의 가정의학 진료를 한국어로도 편하게 안내해 드립니다. 예방, 만성 질환, 일차 진료까지 알기 쉽게 설명드립니다.',
-    drTitle: '스티븐 채 원장님 (Dr. Steven Chae, MD)',
+      '안녕하세요. 저희 SC Family Clinic은 텍사스 플레이노에 위치한 가족 주치의 클리닉입니다.',
+    intro2:
+      '스티븐 최 원장님이 직접 한국어로 진료해 드립니다. 오래 기다리지 않아도 되고, 말이 잘 통하는 곳에서 편안하게 진료받으실 수 있습니다.',
+    drTitle: '스티븐 최 원장님',
     drSubtitle: '가정의학과 전문의 · 미국 전문의 자격',
-    drBio:
-      'UT 사우스웨스턴과 예일 연계 프로그램에서 수련했습니다. 말씀을 잘 들어 드리고, 미리 건강을 챙기는 진료를 지향합니다.',
+    drBio: '25년 이상 가정의학과 전문의로 활동해 오셨습니다.',
+    drBio2:
+      '한국어와 영어 모두 능통하시며, 한인 환자분들이 편안하게 건강을 상담하실 수 있는 환경을 제공해 드립니다.',
     bullets: [
-      '한국어·영어로 문의·진료 안내 가능',
-      '대면 진료: 주 2회 (요일·시간은 전화로 확인)',
+      '한국어로 예약·문의·진료 안내',
       '메디케어·여러 상용 보험 (적용 여부는 개별 확인)',
       '예방 접종, 건강 검진, 만성 질환 관리',
     ],
@@ -805,19 +744,6 @@ const ko = {
       '예약, 보험, 진료 시간은 업무 시간에 전화 주시면 한국어로 안내해 드립니다.',
     office: '사무실 전화:',
     callBtn: '지금 전화하기',
-    ctaEndTitle: '영문으로 자세히 보기',
-    ctaEndBody: '상단의 EN을 누르시거나 다른 메뉴에서 진료·보험·시간 안내를 영어로 확인하실 수 있습니다.',
-  },
-  ctaDefaults: {
-    title: '예약·문의',
-    subtitle:
-      '예약, 보험 적용 여부, 일반 문의는 안내된 업무 시간에 전화로 도와드립니다.',
-    footer:
-      'UHC 어드밴티지, 기본 메디케어, 몰리나 등 여러 보험을 이용하실 수 있습니다. 보험이 없으셔도 전화로 상담 가능합니다.',
-    phoneLabel: '사무실 전화:',
-  },
-  mobile: {
-    officeLine: '사무실',
   },
 } as unknown as Messages;
 
