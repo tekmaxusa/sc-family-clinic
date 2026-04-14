@@ -203,7 +203,6 @@ const en = {
     },
   },
   doctor: {
-    badge: 'Accepting new patients',
     role: 'Board-Certified Family Physician',
     bioTitle: 'Professional biography',
     bio1:
@@ -215,10 +214,11 @@ const en = {
     credTitle: 'Credentials & experience',
     eduTitle: 'Education & training',
     eduItems: [
-      'UT Southwestern Medical Center (MD)',
-      'Yale-affiliated residency program',
-      'University of Louisville residency',
-      'University of Texas at Austin (undergraduate)',
+      'UT Austin (BS)',
+      'UT Southwestern Medical School (MD)',
+      'Yale School of Medicine (Internal Medicine Residency)',
+      'University of Louisville (Family Medicine Residency)',
+      'Trover Foundation (Family Medicine Fellowship)',
     ],
     certTitle: 'Certifications & memberships',
     certItems: [
@@ -591,7 +591,6 @@ const ko = {
     },
   },
   doctor: {
-    badge: '신규 환자 접수 중',
     role: '가정의학과 전문의 (미국 전문의 자격)',
     bioTitle: '약력',
     bio1:
@@ -603,10 +602,11 @@ const ko = {
     credTitle: '자격 및 경력',
     eduTitle: '학력·수련 과정',
     eduItems: [
-      'UT Southwestern Medical Center (MD)',
-      'Yale 계열 레지던시',
-      'University of Louisville 레지던시',
-      'University of Texas at Austin (학사)',
+      'UT Austin (학사)',
+      'UT Southwestern Medical School (MD)',
+      'Yale School of Medicine (내과 레지던시)',
+      'University of Louisville (가정의학 레지던시)',
+      'Trover Foundation (가정의학 펠로우십)',
     ],
     certTitle: '인증·학회 활동',
     certItems: [

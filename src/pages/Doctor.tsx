@@ -1,4 +1,4 @@
-import { Award, CheckCircle2, Languages, GraduationCap } from 'lucide-react';
+import { Award, Languages, GraduationCap } from 'lucide-react';
 import { CLINIC_INFO, DR_CHAE_PHOTO_URL } from '../constants';
 import { useI18n } from '../context/LanguageContext';
 
@@ -20,12 +20,7 @@ export default function Doctor() {
                   className="w-full h-full object-cover object-top rounded-[2.5rem] shadow-2xl"
                 />
               </div>
-              <div className="mt-10">
-                <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-accent-green/10 text-accent-green border border-accent-green/20">
-                  <CheckCircle2 className="w-3.5 h-3.5 mr-1.5" />
-                  {d.badge}
-                </span>
-              </div>
+
             </div>
             <div className="w-full lg:w-2/3">
               <h1 className="text-4xl md:text-6xl font-extrabold text-primary mb-4 tracking-tight">
